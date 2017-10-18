@@ -1,0 +1,27 @@
+body {
+  background-image: url("http://i67.tinypic.com/qqeqzr.jpg;")
+}
+
+.topnav {
+  background-color: #FF3300;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #330000;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #FF6600;
+  color: #000000;
+}
+
+.topnav a.active {
+  background-color: #CC0000;
+  color: #000000 ;
+}
