@@ -8,12 +8,8 @@ class User < ActiveRecord::Base
 
   def self.authenticate(email, password)
     @user = self.find_by(email: email)
-    if @user && @user.password == password return @user
-      # This legit fucking worked on my other shit. WTF. Syntax error on sinatra-- unexpected keyword return. Here's the fucking error msg:
-      # /Users/brittflowers/DBC/devbootcamp/phase-2/passion_project/tune_in_town/app/models/user.rb:11: syntax error, unexpected keyword_return, expecting keyword_do or '{' or '(' if @user && @user.password == password return @user ^ /Users/brittflowers/DBC/devbootcamp/phase-2/passion_project/tune_in_town/app/models/user.rb:27: syntax error, unexpected keyword_end, expecting end-of-input
-    else
-      nil
-    end
+    return @user if @user && @user.password == password
+    nil
   end
 
   def password

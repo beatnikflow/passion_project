@@ -5,8 +5,8 @@ end
 post '/users' do
   @user = User.new(params[:user])
     if @user.save
+      session[:id] = @user.id
       redirect "/users/#{@user.id}"
-      # Why the fuck is this route not working? Interpolation is not working.
     else
       @errors = @user.errors.full_messages
       erb :'/users/new'

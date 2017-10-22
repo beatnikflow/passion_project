@@ -18,22 +18,52 @@
   <title>Tunes - in - Town</title>
 </head>
 <body>
-  <div class="topnav" id="topnav">
+  <!-- <div class="topnav" id="topnav">
     <a href="/">Home</a>
     <a href="/users/new">Sign Up!</a>
-    <% if logged_in? %>
+    <% #if logged_in? %>
       <form action="/sessions" method="POST">
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Logout">
       </form>
-    <% else %>
+    <% #else %>
       <form action="/sessions" method="POST">
         <input type="text" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
         <input type="submit" value="Login">
       </form>
-    <% end %>
+    <% #end %>
+  </div> -->
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="active"><a href="/users/new">Sign Up!</a></li>
+      <li><a href="#">Shows</a></li>
+      <li><a href="#">Artists</a></li>
+
+      <% if logged_in? %>
+
+        <form action="/sessions" method="POST">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Logout">
+        </form>
+        <li><a href="#">Page 3</a></li>
+      <% else %>
+        <li class="login"><form action="/sessions" method="POST">
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Login">
+      </form></li>
+      <% end  %>
+    </ul>
   </div>
+</nav>
+
+
+
+
   <%= erb :'_errors' %>
   <%= yield %>
 </body>
