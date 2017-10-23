@@ -1,3 +1,7 @@
+/** {
+    border: 1px solid blue;
+}
+*/
 body {
     background-color: #CCCCCC;
 }
@@ -50,19 +54,34 @@ li a:active {
 }
 
 input[type=text], input[type=password], input[type=email] {
-    border: 2px solid red;
+    height: 10px;
+    width: 150px;
+    font-family: "courier new";
+    border: 1px solid white;
     color: white;
     background-color: #333;
     border-radius: 4px;
+    margin: 2px;
+    padding: 10px;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
+    height: 32px;
+    font-family: "courier new";
     background-color: #000000;
-    border: 2px solid red;
+    border: 2px solid black;
     color: gray;
     padding: 2px 5px;
     border-radius: 4px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+.home_banner {
+    width: 100%;
+}
+
+li.logout {
+    float: right;
 }
