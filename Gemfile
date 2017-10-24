@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'pg'
 
 gem 'bcrypt'
-
 # Sinatra driver
 gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'

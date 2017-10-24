@@ -9,9 +9,14 @@ $(".register").on("click", function(event) {
   var target = $(this)
   var url = target.attr('href')
 
-  var request = $.ajax ({
-
+  var request = $.ajax({
+    url: url
   })
+    request.done(function (response) {
+      // console.log(response)
+      $(".register-container").html(response)
+    })
+
 
 })
 }

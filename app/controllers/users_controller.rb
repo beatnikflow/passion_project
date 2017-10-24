@@ -1,5 +1,10 @@
 get '/users/new' do
-  erb :'/users/new'
+  # @fb = FbAdapter.new
+  if request.xhr?
+    erb :'/users/_newuserform', layout: false
+  else
+    erb :'/users/new'
+  end
 end
 
 post '/users' do
