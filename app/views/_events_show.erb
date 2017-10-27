@@ -1,0 +1,26 @@
+
+
+<% if @results %>
+<h1>Shows coming up in your city:</h1>
+<div class="events-list-div">
+        <% @results.each do |event| %>
+      <ul class="events-list">
+      <li class="events-list-name">
+        <%= event[:name] %>
+      </li><br><br>
+      <li>
+       <%= event[:address] %>
+     </li><br>
+     <li class="events-list-city">
+        <%= event[:city] %>
+     </li><br><br>
+     <li>
+        <%= event[:date] %> at <%= event[:start_time] %>
+     </li><br><br>
+      <li class="events-list-li">
+        <a href="<%= event[:url] %>">Buy Tickets</a>
+      </li>
+      </ul>
+      <% end %>
+</div>
+<% end %>

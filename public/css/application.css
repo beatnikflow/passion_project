@@ -7,9 +7,39 @@ h1 {
     font-family: "courier new";
 }
 
-p {
+p.p-index {
     text-align: center;
-    font-family: "verdana";
+    font-family: "courier new";
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.events-list-div {
+    width: 600px;
+    margin: auto;
+}
+
+ul.events-list {
+    background-color: gray;
+    display: block;
+    padding: 30px;
+    text-align: center;
+
+}
+
+li.events-list-li {
+    text-align: center;
+    float: left;
+}
+
+li.events-list-name {
+    font-family: 'courier new';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+li.events-list-city {
+    color: #660000;
 }
 
 
@@ -48,6 +78,7 @@ li a:hover {
 li a:active {
     color: red;
 }
+
 
 input[type=text], input[type=password], input[type=email] {
     height: 10px;
@@ -90,4 +121,8 @@ li.logout {
 
 .register-container {
 
+}
+
+.events-class-container {
+    background-color: white;
 }
