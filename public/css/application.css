@@ -1,7 +1,3 @@
-/** {
-    border: 1px solid blue;
-}
-*/
 body {
     background-color: #CCCCCC;
 }
@@ -85,3 +81,10 @@ input[type=button], input[type=submit], input[type=reset] {
 li.logout {
     float: right;
 }
+
+
+#map {
+    width: 500px;
+    height: 400px;
+}
+
