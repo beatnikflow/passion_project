@@ -12,12 +12,29 @@ class TmAdapter
 
   def search_by_city(city)
     @options[:query][:city] = city
-    self.class.get('/discovery/v2/events', @options)
+    result = self.class.get('/discovery/v2/events', @options)
+    JSON.parse(result.parsed_response)
+  end
 
+  def parse_events(payload)
+    eap payload
+    # return array of hashes with the following data: id
+    # name link datetime venue address postal code image
+    results = []
+    payload['_embedded']['events'].each do |event|
+      event_data = {}
+      event_data[:name] = event['name']
+      event_data[:id] = event['id']
+      event_data[:url] = event['url']
+      results << event_data
+    end
+    results
   end
 
   def event_image
   end
+
+
 
 
 end
