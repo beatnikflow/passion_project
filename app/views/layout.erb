@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>Tunes - in - Town</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">🎸Home</a></li>
+      <li class="active"><a class="register" href="/users/new">🤘Sign Up!</a></li>
+      <li class="active"><a href="/events/search">🎤Shows</a></li>
+
+      <% if logged_in? %>
+
+        <li class="logout"><form class="logout-button" action="/sessions" method="POST">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Logout">
+        </form></li>
+      <% else %>
+        <li class="login"><form class="login_form" action="/sessions" method="POST">
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="LOGIN">
+      </form></li>
+      <% end  %>
+    </ul>
+  </div>
+</nav>
+
+  <img class="home_banner" src="/tunesintownbanner.jpg" alt="banner">
+  <%= erb :'_errors' %>
+  <%= yield %>
+</body>
+</html>
